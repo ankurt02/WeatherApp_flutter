@@ -1,16 +1,32 @@
-# weatherapp
+# WeatherApp
 
 A new Flutter project.
 
-## Getting Started
+This is a realtime weather app, made with Flutter.
+It uses a free weather api to fetch the realtime weather information.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## The API is provided by [weatherapi](https://www.weatherapi.com/).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Replace the API_KEY in home.screen.dart with your own API_KEY.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+## How to run the app
+
+clone the repository :
+
+`git clone https://github.com/ankurt02/WeatherApp_flutter.git` 
+
+
+add required dependancies to pubspec.yaml
+
+`flutter pub get`
+
+
+in the root directory, run the code
+
+`flutter run`
+
+
+Flutter :blue_heart:
