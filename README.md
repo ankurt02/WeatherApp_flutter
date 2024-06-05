@@ -20,7 +20,7 @@ clone the repository :
 function test() {
   console.log("git clone https://github.com/ankurt02/WeatherApp_flutter.git");
 } 
-
+```
 
 add required dependancies to pubspec.yaml
 
@@ -28,7 +28,7 @@ add required dependancies to pubspec.yaml
 function test() {
   console.log("flutter pub get");
 }
-
+```
 
 in the root directory, run the code
 
@@ -36,6 +36,6 @@ in the root directory, run the code
 function test() {
   console.log("flutter run");
 }
-
+```
 
 Flutter :blue_heart:
