@@ -16,17 +16,26 @@ Replace the API_KEY in home.screen.dart with your own API_KEY.
 
 clone the repository :
 
-`git clone https://github.com/ankurt02/WeatherApp_flutter.git` 
+```
+function test() {
+  console.log("git clone https://github.com/ankurt02/WeatherApp_flutter.git");
+} 
 
 
 add required dependancies to pubspec.yaml
 
-`flutter pub get`
+```
+function test() {
+  console.log("flutter pub get");
+}
 
 
 in the root directory, run the code
 
-`flutter run`
+```
+function test() {
+  console.log("flutter run");
+}
 
 
 Flutter :blue_heart:
