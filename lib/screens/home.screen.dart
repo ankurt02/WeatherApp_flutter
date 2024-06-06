@@ -126,6 +126,8 @@ class _HomeScreenState extends State<HomeScreen> {
           height: size.height,
           padding: const EdgeInsets.only(
             top: 80,
+            left: 8,
+            right: 8
           ),
           // color: _constants.primaryColor.withOpacity(.1),
           color: Colors.white,
@@ -168,11 +170,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              // Image.asset(
-                              //   "assets/pin.png",
-                              //   width: 18,
-                              //   color: Colors.black87,
-                              // ),
                               Icon(
                                 Icons.location_on,
                                 size: 24,
@@ -210,8 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     width: 70,
                                                     child: Divider(
                                                       thickness: 3.5,
-                                                      color: _constants
-                                                          .primaryColor,
+                                                      color: Colors.blue,
                                                     ),
                                                   ),
                                                   const SizedBox(
@@ -227,8 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     decoration: InputDecoration(
                                                         prefixIcon: Icon(
                                                           Icons.search,
-                                                          color: _constants
-                                                              .primaryColor,
+                                                          color: Colors.black87,
                                                         ),
                                                         suffixIcon:
                                                             GestureDetector(
@@ -237,8 +232,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                   .clear(),
                                                           child: Icon(
                                                             Icons.close,
-                                                            color: _constants
-                                                                .primaryColor,
+                                                            weight: 4,
+                                                            color: Colors.black87,
                                                           ),
                                                         ),
                                                         hintText:
@@ -247,8 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             OutlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
-                                                            color: _constants
-                                                                .primaryColor,
+                                                            color: Colors.blue,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius

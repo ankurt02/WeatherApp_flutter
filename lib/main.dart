@@ -3,19 +3,19 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:weatherapp/screens/home.screen.dart';
 import 'package:device_preview/device_preview.dart';
 
-// void main()  async {
-//   await dotenv.load(fileName : "assets/.env");
-//   runApp(
-//   DevicePreview(
-//     // enabled: !kReleaseMode,
-//     builder: (context) => MyApp(), // Wrap your app
-//   ),
-// );}
+void main()  async {
+  await dotenv.load(fileName : "assets/.env");
+  runApp(
+  DevicePreview(
+    // enabled: !kReleaseMode,
+    builder: (context) => MyApp(), // Wrap your app
+  ),
+);}
 
-void main() async {
-  await dotenv.load(fileName: "assets/.env");
-  runApp(const MyApp());
-}
+// void main() async {
+//   await dotenv.load(fileName: "assets/.env");
+//   runApp(const MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

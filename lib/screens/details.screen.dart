@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:intl/intl.dart';
+import 'package:weatherapp/components/forecast.card.dart';
 import 'package:weatherapp/components/weather.item.dart';
 
 import '../widgets/constants.dart';
@@ -68,19 +69,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
         centerTitle: true,
         backgroundColor: Colors.grey.shade100,
         elevation: 0.0,
-        // actions: [
-        //   Padding(
-        //     padding: const EdgeInsets.only(right: 8.0),
-        //     child: IconButton(
-        //         onPressed: () {
-        //           print("Settings Tapped!");
-        //         },
-        //         icon: const Icon(
-        //           Icons.settings,
-        //           color: Colors.black87,
-        //         )),
-        //   )
-        // ],
+        
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -95,13 +84,8 @@ class _ForecastScreenState extends State<ForecastScreen> {
               width: size.width,
               decoration: BoxDecoration(
                 color: Colors.blue.shade900,
-                // border: Border.all(
-                //   color: Colors.grey,
-                //   // width: 2.5
-                // ),
                 boxShadow: [
                       BoxShadow(
-                        // color: _constants.primaryColor.withOpacity(.5),
                         color: Colors.grey.shade700.withOpacity(0.4
                         ),
                         spreadRadius: 5,
@@ -118,7 +102,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                 clipBehavior: Clip.none,
                 children: [
                   Positioned(
-                    top: -120,
+                    top: -100,
                     right: 20,
                     left: 20,
                     child: Container(
@@ -129,7 +113,6 @@ class _ForecastScreenState extends State<ForecastScreen> {
                         color: Colors.white60.withOpacity(1),
                          boxShadow: [
                       BoxShadow(
-                        // color: _constants.primaryColor.withOpacity(.5),
                         color: Colors.grey.shade400.withOpacity(.5),
                         spreadRadius: 2,
                         blurRadius: 2,
@@ -145,8 +128,6 @@ class _ForecastScreenState extends State<ForecastScreen> {
                         children: [
                           Positioned(
                             width: 150,
-                            // ignore: duplicate_ignore
-                            // ignore: prefer_interpolation_to_compose_strings
                             child: Padding(
                               padding: EdgeInsets.all(12),
                               child: Image.asset("assets/" +
@@ -232,12 +213,6 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             right: 20,
                             child: Container(
                               width: size.width * 0.75,
-                              // decoration: BoxDecoration(
-                              //   border: Border.all(
-                              //     color: Colors.green,
-                              //     width: 2
-                              //   )
-                              // ),
                               child: Divider(
                                 height: 1,
                                 indent: 2,
@@ -248,602 +223,17 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             ),
                           ),
                           Positioned(
-                            top: 330,
+                            top: 320,
                             left: 0,
                             child: Container(
-                              // decoration: BoxDecoration(
-                              //   border: Border.all(
-                              //     color: Colors.red
-                              //   )
-                              // ),
                               height: 400,
                               width: size.width * .9,
                               child: ListView(
                                 physics: const BouncingScrollPhysics(),
                                 children: [
-                                  Card(
-                                    elevation: 1.0,
-                                    shadowColor: Colors.grey,
-                                    margin: const EdgeInsets.only(top: 10, bottom: 5),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          border: Border.all(
-                                              color: Colors.grey.shade300,
-                                              width: 1)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  getForecastWeather(
-                                                      1)["forecastDate"],
-                                                  style: const TextStyle(
-                                                    color: Colors.black54,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  top: 8.0),
-                                                          child: Text(
-                                                            getForecastWeather(
-                                                                        1)[
-                                                                    "minTemperature"]
-                                                                .toString(),
-                                                            style: TextStyle(
-                                                              color:
-                                                                  Colors.grey,
-                                                              fontSize: 30,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          'o',
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.grey,
-                                                              fontSize: 22,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontFeatures: const [
-                                                                FontFeature
-                                                                    .enable(
-                                                                        'sups'),
-                                                              ]),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    SizedBox(
-                                                      width: 30,
-                                                    ),
-                                                    Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  top: 8.0),
-                                                          child: Text(
-                                                            getForecastWeather(
-                                                                        1)[
-                                                                    "maxTemperature"]
-                                                                .toString(),
-                                                            style: TextStyle(
-                                                              color: Colors
-                                                                  .black87,
-                                                              fontSize: 30,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          'o',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black87,
-                                                              fontSize: 22,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontFeatures: const [
-                                                                FontFeature
-                                                                    .enable(
-                                                                        'sups'),
-                                                              ]),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(
-                                              height: 10,
-                                            ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Image.asset(
-                                                      'assets/' +
-                                                          getForecastWeather(
-                                                              1)["weatherIcon"],
-                                                      width: 36,
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 5,
-                                                    ),
-                                                    Text(
-                                                      getForecastWeather(
-                                                          1)["weatherName"],
-                                                      style: const TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: Colors.black54,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      "${getForecastWeather(1)["chanceOfRain"]}%",
-                                                      style: const TextStyle(
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: Colors.black54,
-                                                      ),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Image.asset(
-                                                      'assets/lightrain.png',
-                                                      width: 30,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Card(
-                                    elevation: 1.0,
-                                    shadowColor: Colors.grey,
-                                    margin: const EdgeInsets.only(top: 10, bottom: 5),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          border: Border.all(
-                                              color: Colors.grey.shade300,
-                                              width: 1)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  getForecastWeather(
-                                                      2)["forecastDate"],
-                                                  style: const TextStyle(
-                                                    color: Colors.black54,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  top: 8.0),
-                                                          child: Text(
-                                                            getForecastWeather(
-                                                                        2)[
-                                                                    "minTemperature"]
-                                                                .toString(),
-                                                            style: TextStyle(
-                                                              color:
-                                                                  Colors.grey,
-                                                              fontSize: 30,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          'o',
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.grey,
-                                                              fontSize: 22,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontFeatures: const [
-                                                                FontFeature
-                                                                    .enable(
-                                                                        'sups'),
-                                                              ]),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    SizedBox(
-                                                      width: 30,
-                                                    ),
-                                                    Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  top: 8.0),
-                                                          child: Text(
-                                                            getForecastWeather(
-                                                                        2)[
-                                                                    "maxTemperature"]
-                                                                .toString(),
-                                                            style: TextStyle(
-                                                              color: Colors
-                                                                  .black87,
-                                                              fontSize: 30,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          'o',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black87,
-                                                              fontSize: 22,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontFeatures: const [
-                                                                FontFeature
-                                                                    .enable(
-                                                                        'sups'),
-                                                              ]),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(
-                                              height: 10,
-                                            ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Image.asset(
-                                                      'assets/' +
-                                                          getForecastWeather(
-                                                              2)["weatherIcon"],
-                                                      width: 36,
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 5,
-                                                    ),
-                                                    Text(
-                                                      getForecastWeather(
-                                                          2)["weatherName"],
-                                                      style: const TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: Colors.black54,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      "${getForecastWeather(2)["chanceOfRain"]}%",
-                                                      style: const TextStyle(
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: Colors.black54,
-                                                      ),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Image.asset(
-                                                      'assets/lightrain.png',
-                                                      width: 30,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Card(
-                                    elevation: 1.0,
-                                    shadowColor: Colors.grey,
-                                    margin: const EdgeInsets.only(top: 10, bottom: 5),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          border: Border.all(
-                                              color: Colors.grey.shade300,
-                                              width: 1)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  getForecastWeather(
-                                                      3)["forecastDate"],
-                                                  style: const TextStyle(
-                                                    color: Colors.black54,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  top: 8.0),
-                                                          child: Text(
-                                                            getForecastWeather(
-                                                                        3)[
-                                                                    "minTemperature"]
-                                                                .toString(),
-                                                            style: TextStyle(
-                                                              color:
-                                                                  Colors.grey,
-                                                              fontSize: 30,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          'o',
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.grey,
-                                                              fontSize: 22,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontFeatures: const [
-                                                                FontFeature
-                                                                    .enable(
-                                                                        'sups'),
-                                                              ]),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    SizedBox(
-                                                      width: 30,
-                                                    ),
-                                                    Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  top: 8.0),
-                                                          child: Text(
-                                                            getForecastWeather(
-                                                                        3)[
-                                                                    "maxTemperature"]
-                                                                .toString(),
-                                                            style: TextStyle(
-                                                              color: Colors
-                                                                  .black87,
-                                                              fontSize: 30,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          'o',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black87,
-                                                              fontSize: 22,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontFeatures: const [
-                                                                FontFeature
-                                                                    .enable(
-                                                                        'sups'),
-                                                              ]),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(
-                                              height: 10,
-                                            ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Image.asset(
-                                                      'assets/' +
-                                                          getForecastWeather(
-                                                              3)["weatherIcon"],
-                                                      width: 36,
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 5,
-                                                    ),
-                                                    Text(
-                                                      getForecastWeather(
-                                                          3)["weatherName"],
-                                                      style: const TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: Colors.black54,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      "${getForecastWeather(3)["chanceOfRain"]}%",
-                                                      style: const TextStyle(
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: Colors.black54,
-                                                      ),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Image.asset(
-                                                      'assets/lightrain.png',
-                                                      width: 30,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                
+                                  ForecastCard(dailyForecastWeather: weatherData, day: 1),
+                                  ForecastCard(dailyForecastWeather: weatherData, day: 2),
+                                  ForecastCard(dailyForecastWeather: weatherData, day: 3),
                                 ],
                               ),
                             ),

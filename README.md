@@ -32,4 +32,22 @@ in the root directory, run the code
 flutter run
 ```
 
+
+#Screenshot of flutter app
+
+![HomeScreen](https://drive.google.com/file/d/1n1lVxY0vOdFTuq9uixFGhn9sY0DEJX-n/view?usp=drive_link)
+
+![ForecastScreen](https://drive.google.com/file/d/15L0F8MB_9BoPcdG2mjWlR6JztCJM1LdJ/view?usp=drive_link)
+
+
+
+#TODO
+
+- [X] Make a simple UI
+
+- [ ] Make the app responsive for large screens
+
+- [ ] Make a favourites section to bookmark for easy access to selected cities
+
+
 Flutter :blue_heart:
