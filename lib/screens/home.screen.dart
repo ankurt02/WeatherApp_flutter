@@ -376,7 +376,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               onTap: () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (_) => DetailPage(
+                                      builder: (_) => ForecastScreen(
                                             dailyForecastWeather:
                                                 dailyWeatherForecast,
                                           ))), //this will open forecast screen
