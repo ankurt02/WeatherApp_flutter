@@ -34,10 +34,12 @@ flutter run
 
 
 #Screenshot of flutter app
+<img src="screenshots/HomeScreen.jpg" alt="Home Screen" style="width: 300px; height: 600px;" />
 
-![HomeScreen](https://drive.google.com/file/d/1n1lVxY0vOdFTuq9uixFGhn9sY0DEJX-n/view?usp=drive_link)
+<img src="screenshots/ForecastScreen.jpg" alt="Forecast Screen" style="width: 300px; height: 600px;" />
 
-![ForecastScreen](https://drive.google.com/file/d/15L0F8MB_9BoPcdG2mjWlR6JztCJM1LdJ/view?usp=drive_link)
+
+
 
 
 
