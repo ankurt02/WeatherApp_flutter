@@ -33,17 +33,20 @@ flutter run
 ```
 
 
-#Screenshot of flutter app
-<img src="screenshots/HomeScreen.jpg" alt="Home Screen" style="width: 300px; height: 600px;" />
+# Screenshot of flutter app
 
-<img src="screenshots/ForecastScreen.jpg" alt="Forecast Screen" style="width: 300px; height: 600px;" />
-
-
-
-
+<div style="display: flex; justify-content: space-between; margin : 20px; padding : 20px">
+    <img src="screenshots/HomeScreen.jpg" alt="Home Screen" style="width: 300px; height: 600px; margin: 10px" />
+    <img src="screenshots/ForecastScreen.jpg" alt="Forecast Screen" style="width: 300px; height: 600px;  margin: 10px" />
+</div>
 
 
-#TODO
+
+
+
+
+
+# TODO
 
 - [X] Make a simple UI
 
@@ -52,4 +55,7 @@ flutter run
 - [ ] Make a favourites section to bookmark for easy access to selected cities
 
 
+
+
+ 
 Flutter :blue_heart:
