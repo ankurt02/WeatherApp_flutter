@@ -12,12 +12,6 @@ class WeatherItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        // border: Border.all(
-        //   color: Colors.black,
-        //   width: 2
-        // )
-      ),
       child: Column(
         children: [
           Container(

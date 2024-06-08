@@ -13,7 +13,7 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:weatherapp/components/weather.item.dart';
-import 'package:weatherapp/screens/details.screen.dart';
+import 'package:weatherapp/screens/forecast.screen.dart';
 import 'package:weatherapp/widgets/constants.dart';
 
 class HomeScreen extends StatefulWidget {
