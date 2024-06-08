@@ -36,8 +36,8 @@ flutter run
 # Screenshot of flutter app
 
 <div style="display: flex; justify-content: space-between; margin : 20px; padding : 20px">
-    <img src="screenshots/HomeScreen.jpg" alt="Home Screen" style="width: 300px; height: 600px; margin: 10px" />
-    <img src="screenshots/ForecastScreen.jpg" alt="Forecast Screen" style="width: 300px; height: 600px;  margin: 10px" />
+    <img src="screenshots\HomeScreen.png" alt="Home Screen" style="width: 300px; height: 600px; margin: 10px" />
+    <img src="screenshots\ForecastScreen.png" alt="Forecast Screen" style="width: 300px; height: 600px;  margin: 10px" />
 </div>
 
 
