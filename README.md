@@ -33,6 +33,19 @@ flutter run
 ```
 
 
+to use the device preview, replace the main() code with the below code
+```
+void main()  async {
+  await dotenv.load(fileName : "assets/.env");
+  runApp(
+  DevicePreview(
+    // enabled: !kReleaseMode,
+    builder: (context) => MyApp(), // Wrap your app
+  ),
+);}
+```
+
+
 # Screenshot of flutter app
 
 <div style="display: flex; justify-content: space-between; margin : 20px; padding : 20px">
