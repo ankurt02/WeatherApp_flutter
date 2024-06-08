@@ -58,6 +58,23 @@ class _ForecastScreenState extends State<ForecastScreen> {
       return forecastData;
     }
 
+
+    // determine the container color based on temperature range
+   String getBackgroundImage(int temperature) {
+      if (temperature < 10) {
+        return 'assets/cold.png';
+      } else if (temperature >= 10 && temperature < 25) {
+        return 'assets/decent.png';
+      } else if (temperature >= 25 && temperature < 35) {
+        return 'assets/warm.png';
+      } else {
+        return 'assets/extremehot.png'; 
+      }
+    }
+
+    var todayForecast = getForecastWeather(0); // get data of the current date
+    String backgroundImage = getBackgroundImage(todayForecast['maxTemperature']);
+
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
@@ -83,10 +100,15 @@ class _ForecastScreenState extends State<ForecastScreen> {
               height: size.height * .75,
               width: size.width,
               decoration: BoxDecoration(
-                color: Colors.blue.shade900,
+                // color: Colors.blue.shade900,
+                // color: containerColor,
+                image: DecorationImage(
+                  image: AssetImage(backgroundImage),
+                  fit: BoxFit.cover,
+                ),
                 boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.shade700.withOpacity(0.4
+                        color: Colors.white.withOpacity(0.4
                         ),
                         spreadRadius: 5,
                         blurRadius: 7,
@@ -127,7 +149,9 @@ class _ForecastScreenState extends State<ForecastScreen> {
                         clipBehavior: Clip.none,
                         children: [
                           Positioned(
-                            width: 150,
+                            width: 130,
+                            left: 10,
+                            top: 10,
                             child: Padding(
                               padding: EdgeInsets.all(12),
                               child: Image.asset("assets/" +
@@ -135,7 +159,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                             ),
                           ),
                           Positioned(
-                              top: 150,
+                              top: 130,
                               left: 10,
                               child: Padding(
                                 padding: const EdgeInsets.all(6.0),
@@ -144,38 +168,41 @@ class _ForecastScreenState extends State<ForecastScreen> {
                                   style: const TextStyle(
                                       color: Colors.black87,
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w500),
+                                      fontWeight: FontWeight.w600),
                                 ),
                               )),
                           Positioned(
-                            bottom: 20,
+                            bottom: 10,
                             left: 20,
-                            child: Container(
-                              width: size.width * .8,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  WeatherItem(
-                                    value:
-                                        getForecastWeather(0)["maxWindSpeed"],
-                                    unit: "km/h",
-                                    imageUrl: "assets/windspeed.png",
-                                  ),
-                                  WeatherItem(
-                                    value: getForecastWeather(0)["avgHumidity"],
-                                    unit: "%",
-                                    imageUrl: "assets/humidity.png",
-                                  ),
-                                  WeatherItem(
-                                    value:
-                                        getForecastWeather(0)["chanceOfRain"],
-                                    unit: "%",
-                                    imageUrl: "assets/lightrain.png",
-                                  ),
-                                ],
+                            child: Transform.scale(
+                              scale: 0.9,
+                              child: Container(
+                                width: size.width * .8,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    WeatherItem(
+                                      value:
+                                          getForecastWeather(0)["maxWindSpeed"],
+                                      unit: "km/h",
+                                      imageUrl: "assets/windspeed.png",
+                                    ),
+                                    WeatherItem(
+                                      value: getForecastWeather(0)["avgHumidity"],
+                                      unit: "%",
+                                      imageUrl: "assets/humidity.png",
+                                    ),
+                                    WeatherItem(
+                                      value:
+                                          getForecastWeather(0)["chanceOfRain"],
+                                      unit: "%",
+                                      imageUrl: "assets/lightrain.png",
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -218,7 +245,7 @@ class _ForecastScreenState extends State<ForecastScreen> {
                                 indent: 2,
                                 endIndent: 2,
                                 thickness: 3,
-                                color: Colors.grey.shade400,
+                                color: Colors.white,
                               ),
                             ),
                           ),
